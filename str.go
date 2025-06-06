@@ -1,6 +1,9 @@
 package str
 
-import "strings"
+import (
+	"math/rand"
+	"strings"
+)
 
 func Squish(string string) string {
 	return strings.Join(strings.Fields(string), " ")
@@ -18,4 +21,13 @@ func Mask(s string, maskChar rune, revealCount int) string {
 	revealedPart := s[:revealCount]
 	maskedLength := len(s) - revealCount
 	return revealedPart + strings.Repeat(string(maskChar), maskedLength)
+}
+
+func RandomString(length int) string {
+	const letterBytes = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+	b := make([]byte, length)
+	for i := range b {
+		b[i] = letterBytes[rand.Intn(len(letterBytes))]
+	}
+	return string(b)
 }
