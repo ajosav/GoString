@@ -3,7 +3,7 @@ package str
 import "strings"
 
 func Squish(string string) string {
-	return strings.Join(strings.Fields(string), "")
+	return strings.Join(strings.Fields(string), " ")
 }
 
 func Mask(s string, maskChar rune, revealCount int) string {
