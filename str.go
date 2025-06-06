@@ -1,0 +1,3 @@
+package str
+
+import "strings"
